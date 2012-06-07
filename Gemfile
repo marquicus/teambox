@@ -52,7 +52,7 @@ group :development do
   gem 'haml-rails'
   gem 'unicorn'
   gem 'foreman'
-  gem 'auto_annotate'
+#  gem 'auto_annotate'
 end
 
 group :test, :development do
