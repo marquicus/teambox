@@ -1,0 +1,17 @@
+%h1 Listing git_commits
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @git_commits.each do |git_commit|
+    %tr
+      %td= link_to 'Show', git_commit
+      %td= link_to 'Edit', edit_git_commit_path(git_commit)
+      %td= link_to 'Destroy', git_commit, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Git commit', new_git_commit_path

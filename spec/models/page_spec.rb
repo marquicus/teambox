@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id              :integer(4)      not null, primary key
+#  project_id      :integer(4)
+#  user_id         :integer(4)
+#  name            :string(255)
+#  description     :text
+#  last_comment_id :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  position        :integer(4)
+#  permalink       :string(255)
+#  deleted         :boolean(1)      default(FALSE), not null
+#  is_private      :boolean(1)      default(FALSE), not null
+#
+# Indexes
+#
+#  index_pages_on_deleted     (deleted)
+#  index_pages_on_is_private  (is_private)
+#  index_pages_on_project_id  (project_id)
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Page do

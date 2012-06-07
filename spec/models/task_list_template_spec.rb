@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: task_list_templates
+#
+#  id              :integer(4)      not null, primary key
+#  name            :string(255)
+#  organization_id :integer(4)
+#  position        :integer(4)
+#  raw_tasks       :text
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe TaskListTemplate do

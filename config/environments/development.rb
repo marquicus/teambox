@@ -15,7 +15,7 @@ Teambox::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   #RAILS 3 -  When using url_helpers in Mailers you now need to set host in the default url_options
   config.action_mailer.default_url_options = {:host => Teambox.config.app_domain}

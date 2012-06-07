@@ -1,0 +1,17 @@
+%h1 Listing gitters
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @gitters.each do |gitter|
+    %tr
+      %td= link_to 'Show', gitter
+      %td= link_to 'Edit', edit_gitter_path(gitter)
+      %td= link_to 'Destroy', gitter, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Gitter', new_gitter_path

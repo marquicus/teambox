@@ -21,7 +21,7 @@ gem 'libxml-ruby', '1.1.3', :require => 'libxml'
 gem 'rdiscount', '~> 1.6.3'
 gem 'haml', '~> 3.1.2'
 gem 'sass', '~> 3.1.2'
-# gem 'mysql2'
+gem 'mysql2'
 gem 'mysql', '~> 2.8.1', :require => nil, :group => 'mysql'
 gem 'pg', '~> 0.9.0', :require => nil, :group => 'pg'
 gem 'aws-s3', '~> 0.6.2', :require => 'aws/s3'
@@ -52,6 +52,7 @@ group :development do
   gem 'haml-rails'
   gem 'unicorn'
   gem 'foreman'
+  gem 'auto_annotate'
 end
 
 group :test, :development do

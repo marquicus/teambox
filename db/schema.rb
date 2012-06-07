@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902112234) do
+ActiveRecord::Schema.define(:version => 20120516063525) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -193,6 +193,26 @@ ActiveRecord::Schema.define(:version => 20110902112234) do
 
   add_index "folders", ["token"], :name => "index_folders_on_token"
 
+  create_table "git_commits", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "git_repositories", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "git_tasks", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gitters", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "google_docs", :force => true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
@@ -242,6 +262,11 @@ ActiveRecord::Schema.define(:version => 20110902112234) do
     t.integer  "user_id"
     t.integer  "organization_id"
     t.integer  "role",            :default => 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mvc_demos", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

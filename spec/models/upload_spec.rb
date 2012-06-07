@@ -1,3 +1,33 @@
+# == Schema Information
+#
+# Table name: uploads
+#
+#  id                 :integer(4)      not null, primary key
+#  user_id            :integer(4)
+#  project_id         :integer(4)
+#  comment_id         :integer(4)
+#  page_id            :integer(4)
+#  description        :text
+#  asset_file_name    :string(255)
+#  asset_content_type :string(255)
+#  asset_file_size    :integer(4)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  deleted            :boolean(1)      default(FALSE), not null
+#  is_private         :boolean(1)      default(FALSE), not null
+#  parent_folder_id   :integer(4)
+#  token              :string(16)
+#
+# Indexes
+#
+#  index_uploads_on_comment_id                             (comment_id)
+#  index_uploads_on_deleted                                (deleted)
+#  index_uploads_on_is_private                             (is_private)
+#  index_uploads_on_page_id_and_asset_file_name            (page_id,asset_file_name)
+#  index_uploads_on_project_id_and_deleted_and_updated_at  (project_id,deleted,updated_at)
+#  index_uploads_on_token                                  (token)
+#
+
 require 'spec_helper'
 
 describe Upload do

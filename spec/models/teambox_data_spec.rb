@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: teambox_datas
+#
+#  id                          :integer(4)      not null, primary key
+#  user_id                     :integer(4)
+#  type_id                     :integer(4)
+#  project_ids                 :text
+#  processed_data_file_name    :string(255)
+#  processed_data_content_type :string(255)
+#  processed_data_file_size    :integer(4)
+#  processed_at                :datetime
+#  created_at                  :datetime
+#  updated_at                  :datetime
+#  processed_objects           :text
+#  service                     :string(255)
+#  status                      :integer(4)      default(0)
+#  deleted                     :boolean(1)      default(FALSE), not null
+#  organization_id             :integer(4)
+#  user_map                    :text
+#
+# Indexes
+#
+#  index_teambox_datas_on_deleted  (deleted)
+#
+
 require 'spec_helper'
 describe TeamboxData do
   before do

@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: dividers
+#
+#  id         :integer(4)      not null, primary key
+#  page_id    :integer(4)
+#  project_id :integer(4)
+#  name       :string(255)
+#  position   :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#  deleted    :boolean(1)      default(FALSE), not null
+#
+# Indexes
+#
+#  index_dividers_on_deleted  (deleted)
+#  index_dividers_on_page_id  (page_id)
+#
+
 class Divider < RoleRecord
   include Immortal
 

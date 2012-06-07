@@ -1,0 +1,17 @@
+%h1 Listing git_repositories
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @git_repositories.each do |git_repository|
+    %tr
+      %td= link_to 'Show', git_repository
+      %td= link_to 'Edit', edit_git_repository_path(git_repository)
+      %td= link_to 'Destroy', git_repository, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Git repository', new_git_repository_path

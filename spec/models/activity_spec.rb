@@ -1,3 +1,34 @@
+# == Schema Information
+#
+# Table name: activities
+#
+#  id                  :integer(4)      not null, primary key
+#  user_id             :integer(4)
+#  project_id          :integer(4)
+#  target_id           :integer(4)
+#  target_type         :string(255)
+#  action              :string(255)
+#  comment_target_type :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  comment_target_id   :integer(4)
+#  deleted             :boolean(1)      default(FALSE), not null
+#  last_activity_id    :integer(4)
+#  is_private          :boolean(1)      default(FALSE), not null
+#
+# Indexes
+#
+#  index_activities_on_comment_target_id    (comment_target_id)
+#  index_activities_on_comment_target_type  (comment_target_type)
+#  index_activities_on_created_at           (created_at)
+#  index_activities_on_deleted              (deleted)
+#  index_activities_on_is_private           (is_private)
+#  index_activities_on_last_activity_id     (last_activity_id)
+#  index_activities_on_project_id           (project_id)
+#  index_activities_on_target_id            (target_id)
+#  index_activities_on_target_type          (target_type)
+#
+
 require 'spec_helper'
 
 describe Activity do

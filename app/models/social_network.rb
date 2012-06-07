@@ -1,6 +1,17 @@
+# == Schema Information
+#
+# Table name: social_networks
+#
+#  id                   :integer(4)      not null, primary key
+#  card_id              :integer(4)
+#  name                 :string(255)
+#  account_network_type :integer(4)      default(0)
+#  account_type         :integer(4)      default(0)
+#
+
 class SocialNetwork < ActiveRecord::Base
   belongs_to :user
-  NETWORK_TYPES = ['Twitter','Facebook','Linked In','FriendFeed','MySpace','Seesmic','Delicious','Stumble Upon','Other']
+  NETWORK_TYPES = ['Twitter','Facebook','Linked In','FriendFeed','MySpace','Delicious','Stumble Upon','Google+','Youtube','Google Code','Github','Other']
   TYPES = ['Personal','Business','Other']
 
   def get_network_type
@@ -16,14 +27,17 @@ class SocialNetwork < ActiveRecord::Base
       name
     else
       case get_network_type
-        when 'Twitter'      then "http://www.twitter.com/#{name}"
-        when 'Facebook'     then "http://www.facebook.com/#{name}"
-        when 'Linked In'    then "http://www.linkedin.com/in/#{name}"
-        when 'FriendFeed'   then "http://www.friendfeed.com/#{name}"
-        when 'MySpace'      then "http://www.myspace.com/#{name}"
-        when 'Seesmic'      then "http://www.seesmic.tv/#{name}"
+        when 'Twitter'      then "https://twitter.com/#{name}"
+        when 'Facebook'     then "https://www.facebook.com/#{name}"
+        when 'Linked In'    then "https://www.linkedin.com/in/#{name}"
+        when 'FriendFeed'   then "https://friendfeed.com/#{name}"
+        when 'MySpace'      then "https://www.myspace.com/#{name}"
         when 'Delicious'    then "http://www.delicious.com/#{name}"
         when 'Stumble Upon' then "http://#{name}.stumbleupon.com/"
+        when 'Google+'      then "http://www.google.com/profiles/#{name}"
+        when 'Youtube'      then "http://www.youtube.com/user/#{name}"
+        when 'Google Code'  then "http://code.google.com/u/#{name}"
+        when 'Github'       then "https://github.com/#{name}"
       end
     end
   end

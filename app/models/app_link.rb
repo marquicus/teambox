@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: app_links
+#
+#  id                :integer(4)      not null, primary key
+#  user_id           :integer(4)
+#  provider          :string(255)
+#  app_user_id       :string(255)
+#  custom_attributes :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  credentials       :text
+#
+# Indexes
+#
+#  index_app_links_on_provider_and_app_user_id  (provider,app_user_id)
+#  index_app_links_on_user_id                   (user_id)
+#
+
 class AppLink < ActiveRecord::Base
 
   belongs_to :user

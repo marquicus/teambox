@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id              :integer(4)      not null, primary key
+#  page_id         :integer(4)
+#  project_id      :integer(4)
+#  name            :string(255)
+#  body            :text
+#  body_html       :text
+#  position        :integer(4)
+#  last_comment_id :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  deleted         :boolean(1)      default(FALSE), not null
+#
+# Indexes
+#
+#  index_notes_on_deleted     (deleted)
+#  index_notes_on_page_id     (page_id)
+#  index_notes_on_project_id  (project_id)
+#
+
 class Note < RoleRecord
   include Immortal
 

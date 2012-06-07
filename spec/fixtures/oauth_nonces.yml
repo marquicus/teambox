@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: oauth_nonces
+#
+#  id         :integer(4)      not null, primary key
+#  nonce      :string(255)
+#  timestamp  :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#
+# Indexes
+#
+#  index_oauth_nonces_on_nonce_and_timestamp  (nonce,timestamp) UNIQUE
+#
+
 one:
   id: 1
   nonce: a_nonce

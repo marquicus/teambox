@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: invitations
+#
+#  id              :integer(4)      not null, primary key
+#  user_id         :integer(4)
+#  project_id      :integer(4)
+#  role            :integer(4)      default(2)
+#  email           :string(255)
+#  invited_user_id :integer(4)
+#  token           :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  membership      :integer(4)      default(10)
+#  deleted         :boolean(1)      default(FALSE), not null
+#
+# Indexes
+#
+#  index_invitations_on_deleted     (deleted)
+#  index_invitations_on_project_id  (project_id)
+#  index_invitations_on_user_id     (user_id)
+#
+
 require 'digest/sha1'
 
 class Invitation < RoleRecord

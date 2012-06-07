@@ -1,0 +1,10 @@
+= form_for @git_commit do |f|
+  -if @git_commit.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@git_commit.errors.count, "error")} prohibited this git_commit from being saved:"
+      %ul
+        - @git_commit.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

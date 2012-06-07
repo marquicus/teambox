@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: memberships
+#
+#  id              :integer(4)      not null, primary key
+#  user_id         :integer(4)
+#  organization_id :integer(4)
+#  role            :integer(4)      default(20)
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class Membership < ActiveRecord::Base
   ROLES = {:external => 10, :participant => 20, :admin => 30}
 

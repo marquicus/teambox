@@ -1,0 +1,17 @@
+%h1 Listing git_tasks
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @git_tasks.each do |git_task|
+    %tr
+      %td= link_to 'Show', git_task
+      %td= link_to 'Edit', edit_git_task_path(git_task)
+      %td= link_to 'Destroy', git_task, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Git task', new_git_task_path

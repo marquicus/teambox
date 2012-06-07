@@ -1,0 +1,10 @@
+= form_for @mvc_demo do |f|
+  -if @mvc_demo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mvc_demo.errors.count, "error")} prohibited this mvc_demo from being saved:"
+      %ul
+        - @mvc_demo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

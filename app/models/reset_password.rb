@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: reset_passwords
+#
+#  id              :integer(4)      not null, primary key
+#  user_id         :integer(4)
+#  reset_code      :string(255)
+#  expiration_date :datetime
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 require 'digest/sha1'
 
 class ResetPassword < ActiveRecord::Base

@@ -1,0 +1,17 @@
+%h1 Listing mvc_demos
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @mvc_demos.each do |mvc_demo|
+    %tr
+      %td= link_to 'Show', mvc_demo
+      %td= link_to 'Edit', edit_mvc_demo_path(mvc_demo)
+      %td= link_to 'Destroy', mvc_demo, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Mvc demo', new_mvc_demo_path

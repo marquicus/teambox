@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: email_bounces
+#
+#  id                :integer(4)      not null, primary key
+#  email             :string(255)
+#  exception_type    :string(255)
+#  exception_message :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+# Indexes
+#
+#  index_email_bounces_on_created_at  (created_at)
+#  index_email_bounces_on_email       (email)
+#
+
 require 'spec_helper'
 
 describe EmailBounce do

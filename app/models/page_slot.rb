@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: page_slots
+#
+#  id              :integer(4)      not null, primary key
+#  page_id         :integer(4)
+#  rel_object_id   :integer(4)      default(0), not null
+#  rel_object_type :string(30)
+#  position        :integer(4)      default(0), not null
+#
+
 class PageSlot < ActiveRecord::Base
   belongs_to :page
   belongs_to :rel_object, :polymorphic => true

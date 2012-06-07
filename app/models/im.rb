@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: ims
+#
+#  id              :integer(4)      not null, primary key
+#  card_id         :integer(4)
+#  name            :string(255)
+#  account_im_type :integer(4)      default(0)
+#  account_type    :integer(4)      default(0)
+#
+
 class Im < ActiveRecord::Base
   belongs_to :user
 

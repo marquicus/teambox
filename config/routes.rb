@@ -1,5 +1,13 @@
 Teambox::Application.routes.draw do
 
+  resources :git_repositories
+
+  resources :git_commits
+
+  resources :git_tasks
+
+  resources :gitters
+
   # If secure_logins is true, constrain matches to ssl requests
   class SSLConstraints
     def self.matches?(request)
